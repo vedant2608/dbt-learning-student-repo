@@ -1,0 +1,79 @@
+[0m02:56:43.349241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A73E3FA010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A7418AF790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A741C09610>]}
+
+
+============================== 02:56:43.354248 | 18f468ba-f6b5-4a7b-80ef-c4d45587d2de ==============================
+[0m02:56:43.354248 [info ] [MainThread]: Running with dbt=1.11.2
+[0m02:56:43.355247 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\vedan\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt init --skip-profile-setup airbnb', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m02:56:44.028923 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\vedan\.dbt
+[0m02:56:44.032922 [debug] [MainThread]: Starter project path: E:\DBT Learnings\dbt-learning-student-repo\.venv\Lib\site-packages\dbt\include\starter_project
+[0m02:56:44.196291 [info ] [MainThread]: 
+Your new dbt project "airbnb" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m02:56:44.199286 [debug] [MainThread]: Command `dbt init` succeeded at 02:56:44.199286 after 0.94 seconds
+[0m02:56:44.200284 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A741C14550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A741C08550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A73AE5C590>]}
+[0m02:56:44.200284 [debug] [MainThread]: Flushing usage events
+[0m02:56:45.359895 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:46:23.113322 [error] [MainThread]: Encountered an error:
+
+[0m17:46:23.199640 [error] [MainThread]: Traceback (most recent call last):
+  File "E:\DBT Learnings\dbt-learning-student-repo\.venv\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DBT Learnings\dbt-learning-student-repo\.venv\Lib\site-packages\dbt\cli\requires.py", line 105, in wrapper
+    ctx.with_resource(track_run(run_command=flags.WHICH))
+  File "E:\DBT Learnings\dbt-learning-student-repo\.venv\Lib\site-packages\click\core.py", line 602, in with_resource
+    return self._exit_stack.enter_context(context_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 517, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "E:\DBT Learnings\dbt-learning-student-repo\.venv\Lib\site-packages\dbt\tracking.py", line 518, in track_run
+    track_invocation_start(invocation_context)
+  File "E:\DBT Learnings\dbt-learning-student-repo\.venv\Lib\site-packages\dbt\tracking.py", line 261, in track_invocation_start
+    get_platform_context(),
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DBT Learnings\dbt-learning-student-repo\.venv\Lib\site-packages\dbt\tracking.py", line 197, in get_platform_context
+    "platform": platform.platform(),
+                ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\platform.py", line 1212, in platform
+    system, node, release, version, machine, processor = uname()
+                                                         ^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\platform.py", line 856, in uname
+    release, version, csd, ptype = win32_ver()
+                                   ^^^^^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\platform.py", line 371, in win32_ver
+    major, minor, build = map(int, _syscmd_ver()[2].split('.'))
+                                   ^^^^^^^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\platform.py", line 284, in _syscmd_ver
+    info = subprocess.check_output(cmd,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\vedan\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m17:46:23.201634 [debug] [MainThread]: Command `dbt debug` failed at 17:46:23.200644 after 0.16 seconds
